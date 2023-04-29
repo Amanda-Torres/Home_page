@@ -4,7 +4,10 @@
  padding: 0;
  box-sizing: border-box;
  font-family: 'Poppins', sans-serif;
- background-color: black;
+}
+
+body{
+    background-color: black;
 }
 
 header{
@@ -12,7 +15,7 @@ header{
     height: 10vh;
 }
 
-.menu{
+#menu{
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -28,13 +31,13 @@ header{
     cursor: pointer;
 }
 
-.menu .lista{
+.lista{
     padding-right: 7rem;
     display: flex;
     list-style: none;
 }
 
-.menu .lista a{
+.lista a{
     text-decoration: none;
     padding: 1.2rem;
     font-weight: 600;
@@ -42,13 +45,14 @@ header{
     transition: all 0.5s;
 }
 
-.menu .lista a:hover{
+.lista a:hover{
     color: #dd06dd;
 }
 
 main{
     height: 90vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -60,59 +64,79 @@ h1{
 }
 
 .principal_text{
+    display: flex;
+    flex-direction: column;
     height: 120px;
-    overflow: hidden;
+    z-index: 4;
 }
 
-.main .texto-dinamico{
+.animation{
     display: flex;
     justify-content: center;
-    align-items: center;
+    position: relative;
 }
 
-.main .texto-dinamico li{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
+.texto-dinamico {
+    text-align: center;
     font-weight: 700;
     font-size: 40px;
     color: #dd06dd;
-    position: relative;
+    position: absolute;
     top: 0;
-    animation: slide 8s steps(3) infinite;
+    opacity: 0;
+}
+
+#texto_1{
+    animation: slide 9s infinite;
+    z-index: 3;
+}
+
+#texto_2{
+    animation: slide 9s infinite;
+    animation-delay: 3s;
+    z-index: 2;
+}
+
+#texto_3{
+    animation: slide 9s infinite;
+    animation-delay: 6s;
+    z-index: 1;
 }
 
 @keyframes slide{
-    100% {
-        top: -180px;
+    0%{
+        opacity: 0;
+    }
+    5%{
+        opacity: 1;
+    }
+    20%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    30%{
+        opacity: 1;
+        transform: translateY(-40%);
+    }
+    40%{
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(-100%);
     }
 }
 
-.texto-dinamico{
-    overflow: hidden;
-}
-
-.paragrafo{
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
-}
-
-.main p{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+p{
+    text-align: center;
+    padding: 30px;
+    width: 900px;
     font-weight: 400;
     font-size: 16px;
     color: #bdbebd;
 }
 
-.btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 button{
+    background-color: black;
     padding: 12px 24px;
     border: 2px solid white;
     border-radius: 40px;
