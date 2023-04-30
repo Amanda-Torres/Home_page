@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400&family=Poppins:wght@300;500;600;700;800&display=swap');
+
+:root{
+    --cor_principal: #dd06dd;
+}
+
 *{
  margin: 0;
  padding: 0;
@@ -46,7 +51,7 @@ header{
 }
 
 .lista a:hover{
-    color: #dd06dd;
+    color: var(--cor_principal);
 }
 
 main{
@@ -61,13 +66,14 @@ h1{
     font-weight: 700;
     font-size: 40px;
     color: white;
+    background-color: black;
+    z-index: 4;
 }
 
 .principal_text{
     display: flex;
     flex-direction: column;
     height: 120px;
-    z-index: 4;
 }
 
 .animation{
@@ -80,26 +86,26 @@ h1{
     text-align: center;
     font-weight: 700;
     font-size: 40px;
-    color: #dd06dd;
+    color: var(--cor_principal);
     position: absolute;
     top: 0;
     opacity: 0;
 }
 
 #texto_1{
-    animation: slide 9s infinite;
+    animation: slide 5s infinite;
     z-index: 3;
 }
 
 #texto_2{
-    animation: slide 9s infinite;
-    animation-delay: 3s;
+    animation: slide 5s infinite;
+    animation-delay: 1.6s;
     z-index: 2;
 }
 
 #texto_3{
-    animation: slide 9s infinite;
-    animation-delay: 6s;
+    animation: slide  5s infinite;
+    animation-delay: 3.2s;
     z-index: 1;
 }
 
@@ -115,21 +121,18 @@ h1{
         transform: translateY(0);
     }
     30%{
-        opacity: 1;
-        transform: translateY(-40%);
-    }
-    40%{
         opacity: 0;
+        transform: translateY(-80%);
     }
     100%{
-        transform: translateY(-100%);
+        opacity: 0;
     }
 }
 
 p{
     text-align: center;
     padding: 30px;
-    width: 900px;
+    width: 800px;
     font-weight: 400;
     font-size: 16px;
     color: #bdbebd;
@@ -149,7 +152,7 @@ button{
 
 Button:hover{
     padding: 12px 24px;
-    border: 2px solid #dd06dd;
+    border: 2px solid var(--cor_principal);
     border-radius: 40px;
     font-size: 15px;
     font-weight: 400;
